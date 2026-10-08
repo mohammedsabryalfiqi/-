@@ -62,7 +62,10 @@ html[data-theme='light'] {
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 120px);
+}
 
 body {
   margin: 0;
@@ -127,6 +130,7 @@ button { cursor: pointer; border: 0; background: none; }
   display: flex;
   align-items: center;
   backdrop-filter: blur(18px) saturate(140%);
+  background: var(--bg); /* احتياط للمتصفحات القديمة */
   background: color-mix(in srgb, var(--bg) 78%, transparent);
   border-bottom: 1px solid var(--border);
 }
@@ -345,6 +349,7 @@ button { cursor: pointer; border: 0; background: none; }
   padding: 14px 0;
   margin-top: 18px;
   backdrop-filter: blur(18px);
+  background: var(--bg); /* احتياط */
   background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 92%, transparent) 60%, transparent);
   border-bottom: 1px solid var(--border);
 }
@@ -599,6 +604,7 @@ body[data-view='list'] .preview-text { white-space: normal; }
   display: flex; align-items: center; gap: 14px;
   padding: 20px 24px;
   border-bottom: 1px solid var(--border);
+  background: var(--surface-solid); /* احتياط */
   background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
   backdrop-filter: blur(12px);
 }
@@ -609,6 +615,7 @@ body[data-view='list'] .preview-text { white-space: normal; }
   border-top: 1px solid var(--border);
   display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;
   position: sticky; bottom: 0;
+  background: var(--surface-solid); /* احتياط */
   background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
   backdrop-filter: blur(12px);
 }
