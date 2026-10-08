@@ -1,9 +1,7 @@
-# مساحة البيانات (لا تُرفع إلى Git)
-node_modules/
-data/tmp/
-data/backups/*.json
-npm-debug.log*
-*.log
+node_modules
+dist
+dist-ssr
+*.local
 .env
 .DS_Store
-Thumbs.db
+*.log

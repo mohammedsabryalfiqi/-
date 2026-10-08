@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* خط الواجهة الأساسي — من ملفات المكتبة نفسها */
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-Variable.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tajawal";
+  src: url("/fonts/Tajawal-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 230 25% 14%;
+    --surface: 0 0% 100%;
+    --muted: 230 10% 45%;
+    --border: 230 15% 88%;
+    --primary: 165 65% 32%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 32 95% 52%;
+  }
+
+  .dark {
+    --background: 232 26% 9%;
+    --foreground: 40 30% 94%;
+    --surface: 232 22% 13%;
+    --muted: 230 12% 62%;
+    --border: 231 16% 22%;
+    --primary: 165 60% 44%;
+    --primary-foreground: 232 26% 9%;
+    --accent: 32 95% 58%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    @apply bg-surface border border-border rounded-2xl shadow-sm;
+  }
+}
+
+/* شريط تمرير أنيق */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

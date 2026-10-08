@@ -1,9 +1,0 @@
-node_modules
-npm-debug.log*
-.git
-.gitignore
-data/tmp
-data/backups
-test
-deploy
-*.md
