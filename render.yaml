@@ -1,0 +1,21 @@
+# Render.com — نشر بضغطة واحدة مع قرص دائم للخطوط
+services:
+  - type: web
+    name: arabic-fonts-library
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_VERSION
+        value: 22
+      - key: FONTS_DATA_DIR
+        value: /var/data
+    disk:
+      name: fonts-data
+      mountPath: /var/data
+      sizeGB: 5

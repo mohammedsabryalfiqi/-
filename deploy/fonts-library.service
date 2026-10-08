@@ -1,0 +1,44 @@
+# ------------------------------------------------------------------
+#  خدمة systemd لمكتبة الخطوط العربية
+#  1) عدّل المسارات أدناه حسب سيرفرك
+#  2) sudo cp deploy/fonts-library.service /etc/systemd/system/
+#  3) sudo systemctl daemon-reload && sudo systemctl enable --now fonts-library
+#  4) sudo journalctl -u fonts-library -f
+# ------------------------------------------------------------------
+[Unit]
+Description=Arabic Font Library (مكتبة الخطوط العربية)
+Documentation=https://github.com/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/arabic-fonts
+
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=4173
+# البيانات في مجلد مستقل حتى يبقى التحديث آمنًا
+Environment=FONTS_DATA_DIR=/var/lib/arabic-fonts
+# اختياري: حماية مسارات الإدارة
+# Environment=ADMIN_TOKEN=ضع-رقمًا-سريًا-هنا
+
+ExecStart=/usr/bin/node /var/www/arabic-fonts/server.js
+
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fonts-library
+
+# صلاحيات مشدّدة
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/arabic-fonts
+
+[Install]
+WantedBy=multi-user.target
