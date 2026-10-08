@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/types.ts","./src/components/FontCard.tsx","./src/components/FontDetailDialog.tsx","./src/components/UploadDialog.tsx","./src/lib/db.ts","./src/lib/fontLoader.ts","./src/lib/fontParser.ts"],"version":"5.9.3"}
