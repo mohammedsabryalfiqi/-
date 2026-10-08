@@ -1,0 +1,26 @@
+{
+  "name": "arabic-fonts-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "مكتبة الخطوط العربية — موقع لرفع خطوط عربية ومعاينتها بجملة مخصّصة وحفظها على السيرفر (بدون أي تبعيات)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node --input-type=commonjs -e \"const s=require('./lib/store');s.load().then(()=>require('./lib/seed').seed({log:console.log})).then(r=>{console.log('تم استيراد',r.imported,'خطًا');process.exit(0)})\"",
+    "fetch-fonts": "node scripts/fetch-google-fonts.mjs",
+    "test": "node test/smoke.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "arabic",
+    "fonts",
+    "font-library",
+    "typography",
+    "خطوط",
+    "الخطوط-العربية"
+  ],
+  "license": "MIT"
+}

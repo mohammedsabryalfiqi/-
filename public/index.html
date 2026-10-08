@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مكتبة الخطوط العربية — Arabic Font Library</title>
+<meta name="description" content="مكتبة عالمية للخطوط العربية: ارفع خطوطك، عاينها بجملة مخصّصة، وابحث عن الخط المناسب بسهولة. Arabic font library with live previews, search and self-hosted storage.">
+<meta name="theme-color" content="#08080b">
+<meta property="og:title" content="مكتبة الخطوط العربية">
+<meta property="og:description" content="ارفع مكتبتك من الخطوط العربية، عاين كل خط بجملة مخصّصة، وابحث عن الخط الذي تريده بسهولة.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e7b96a'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' font-family='serif' fill='%2316130c'%3E%D8%AE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- ============================ header ============================ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Arabic Font Library">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 19c4.5 0 6-2.6 6-6.5S8.6 4 4 4"/><path d="M12 19h8"/><path d="M16 4c1.6 2.4 2.2 4.6 2.2 6.6 0 2-1.4 3.4-3.4 3.4"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title" data-i18n="brand.title">مكتبة الخطوط العربية</span>
+        <span class="brand-sub">Arabic Font Library</span>
+      </span>
+    </a>
+
+    <div class="header-search">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false"
+             placeholder="ابحث باسم الخط أو المصمم أو الوسم…" data-i18n-attr="placeholder:search.placeholder" aria-label="بحث">
+      <kbd>/</kbd>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="btn-lang" title="Language / اللغة" aria-label="Language">
+        <span style="font-size:12px;font-weight:700;font-family:var(--mono)" id="lang-label">EN</span>
+      </button>
+      <button class="icon-btn" id="btn-theme" title="المظهر" data-i18n-attr="title:theme.toggle" aria-label="theme">
+        <svg id="icon-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/>
+        </svg>
+      </button>
+      <button class="btn btn-primary" id="btn-upload">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/>
+        </svg>
+        <span data-i18n="nav.upload">رفع خطوط</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= hero ============================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">مكتبة خطوط مفتوحة · استضافة ذاتية</span></span>
+      <h1 data-i18n="hero.title">اكتشف الخط العربي المناسب في ثوانٍ</h1>
+      <p class="lead" data-i18n="hero.lead">
+        ارفع خطوطك مرة واحدة، وستُحفظ على السيرفر داخل مكتبتك الخاصة. اكتب جملة المعاينة
+        وستظهر أسفل اسم كل خط بخطّه نفسه — لتتعرّف على الخط الذي تبحث عنه بلمحة واحدة.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="btn-upload-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/>
+          </svg>
+          <span data-i18n="hero.cta.upload">ارفع مكتبة الخطوط</span>
+        </button>
+        <a class="btn" href="#library">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 6h16M4 12h16M4 18h10"/>
+          </svg>
+          <span data-i18n="hero.cta.browse">تصفّح المكتبة</span>
+        </a>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+
+    <aside class="showcase" aria-label="showcase">
+      <div class="showcase-label">
+        <span data-i18n="showcase.label">معاينة حيّة</span>
+        <span class="showcase-name" id="showcase-name">—</span>
+      </div>
+      <div class="showcase-text" id="showcase-text">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم</div>
+      <div class="showcase-meta">
+        <span id="showcase-meta">—</span>
+        <span class="showcase-dots" id="showcase-dots"></span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ toolbar =========================== -->
+<div class="toolbar" id="library">
+  <div class="wrap">
+    <div class="toolbar-row">
+      <div class="filters" id="filters" role="tablist">
+        <button class="chip on" data-filter="" data-i18n="filter.all">الكل</button>
+        <button class="chip" data-filter="arabic" data-i18n="filter.arabic">يدعم العربية</button>
+        <button class="chip" data-filter="variable" data-i18n="filter.variable">خطوط متغيّرة</button>
+        <button class="chip" data-filter="static" data-i18n="filter.static">خطوط ثابتة</button>
+        <button class="chip" data-filter="latin" data-i18n="filter.latin">يدعم اللاتينية</button>
+      </div>
+
+      <div class="select-wrap">
+        <select id="sort" aria-label="ترتيب">
+          <option value="recent" data-i18n="sort.recent">الأحدث إضافة</option>
+          <option value="name" data-i18n="sort.name">الاسم (أ - ي)</option>
+          <option value="size" data-i18n="sort.size">الحجم</option>
+          <option value="downloads" data-i18n="sort.downloads">الأكثر تحميلًا</option>
+        </select>
+      </div>
+
+      <div class="size-control">
+        <label for="preview-size" data-i18n="preview.size">حجم المعاينة</label>
+        <input id="preview-size" type="range" min="18" max="64" step="1" value="34" aria-label="حجم المعاينة">
+        <button class="icon-btn" id="btn-view" title="عرض" aria-label="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/>
+            <rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="sample-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M4 7h16M4 12h10M4 17h13"/>
+      </svg>
+      <input id="sample" type="text" maxlength="200" spellcheck="false"
+             placeholder="اكتب جملة المعاينة التي ستظهر أسفل اسم كل خط…"
+             data-i18n-attr="placeholder:preview.sample.placeholder">
+      <span class="hint" data-i18n="preview.sample.hint">تُحفظ في المتصفح · Enter للتطبيق</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= grid ============================= -->
+<main class="wrap">
+  <div class="results-head">
+    <h2 id="results-title" data-i18n="results.title">المكتبة</h2>
+    <span class="meta" id="results-meta"></span>
+  </div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+  <div style="display:grid;place-items:center;margin-top:28px">
+    <button class="btn" id="btn-more" hidden data-i18n="results.more">عرض المزيد</button>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> <span data-i18n="footer.rights">مكتبة الخطوط العربية — جميع الخطوط المرفوعة تبقى ملك أصحابها.</span></span>
+    <span>
+      <a href="/api/fonts" target="_blank" rel="noopener" data-i18n="footer.api">واجهة برمجية (API)</a>
+      ·
+      <a href="/api/export" target="_blank" rel="noopener" data-i18n="footer.export">نسخة احتياطية JSON</a>
+      ·
+      <a href="/embed.js" target="_blank" rel="noopener" data-i18n="footer.widget">أداة التضمين</a>
+    </span>
+  </div>
+</footer>
+
+<!-- ========================== upload modal ======================== -->
+<div class="modal-backdrop" id="upload-modal" role="dialog" aria-modal="true" aria-labelledby="upload-title">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="upload-title" data-i18n="upload.title">رفع خطوط إلى المكتبة</h3>
+      <button class="icon-btn" data-close aria-label="إغلاق">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="dropzone" id="dropzone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/>
+        </svg>
+        <strong data-i18n="upload.drop.title">اسحب ملفات الخطوط هنا أو اضغط للاختيار</strong>
+        <span data-i18n="upload.drop.text">TTF · OTF · WOFF · WOFF2 — حتى 64 ميجابايت للملف، ويمكن رفع عدة خطوط معًا</span>
+        <input id="file-input" type="file" multiple accept=".ttf,.otf,.woff,.woff2,.ttc,font/*" hidden>
+      </div>
+
+      <div class="file-list" id="file-list"></div>
+      <div class="progress" id="progress" hidden><i></i></div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="up-name" data-i18n="upload.name">اسم الخط (اختياري — يُقترح تلقائيًا)</label>
+          <input class="input" id="up-name" type="text" placeholder="مثال: خط ديواني">
+        </div>
+        <div class="field">
+          <label for="up-tags" data-i18n="upload.tags">وسوم (افصل بفاصلة)</label>
+          <input class="input" id="up-tags" type="text" placeholder="عناوين، كوفي، مصحف">
+        </div>
+      </div>
+      <div class="field">
+        <label for="up-sample" data-i18n="upload.sample">جملة معاينة خاصة بهذا الخط (اختياري)</label>
+        <input class="input" id="up-sample" type="text" placeholder="شانك الله يرحم الوالدين">
+      </div>
+      <div class="field">
+        <label for="up-note" data-i18n="upload.note">ملاحظة (المصدر، الرخصة…)</label>
+        <textarea class="textarea" id="up-note" rows="2"></textarea>
+      </div>
+      <div class="field">
+        <label class="switch" style="display:flex;gap:10px;align-items:center;font-size:13px;color:var(--text-2)">
+          <input type="checkbox" id="up-force"> <span data-i18n="upload.force">استبدال/إضافة حتى لو كان الخط موجودًا مسبقًا (نفس البصمة)</span>
+        </label>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close data-i18n="btn.cancel">إلغاء</button>
+      <button class="btn btn-primary" id="btn-do-upload" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M5 12l5 5L19 7"/>
+        </svg>
+        <span data-i18n="upload.go">ابدأ الرفع</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== detail modal ======================== -->
+<div class="modal-backdrop" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="detail-title">—</h3>
+      <button class="icon-btn" data-close aria-label="إغلاق">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="detail-body"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="assertive"></div>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

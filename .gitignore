@@ -1,0 +1,9 @@
+# مساحة البيانات (لا تُرفع إلى Git)
+node_modules/
+data/tmp/
+data/backups/*.json
+npm-debug.log*
+*.log
+.env
+.DS_Store
+Thumbs.db
